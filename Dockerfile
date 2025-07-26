@@ -91,6 +91,9 @@ RUN cd /tmp && \
     make -j$(nproc) && make install && \
     rm -rf /tmp/systemc-2.3.4*
 
+# Copy the eman script to the container
+COPY ./eman.sh /usr/local/bin/eman
+RUN chmod +x /usr/local/bin/eman
 
 # base + all packages
 FROM base AS final
