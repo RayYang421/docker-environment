@@ -95,6 +95,9 @@ RUN cd /tmp && \
 COPY ./eman.sh /usr/local/bin/eman
 RUN chmod +x /usr/local/bin/eman
 
+# Make sure the eman script can be executed by the user
+ENV PATH="/usr/local/bin:${PATH}"
+
 # base + all packages
 FROM base AS final
 USER root
