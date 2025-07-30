@@ -20,6 +20,17 @@ die() {
     exit 1
 }
 
+run_make_in_dir() {
+    local dir="$1"
+    if [ -z "$dir" ]; then
+        die "Directory path required"
+    elif [ ! -d "$dir" ]; then
+        die "Directory '$dir' does not exist"
+    fi
+    cd "$dir" || exit 1
+    make clean all
+}
+
 case "$1" in
     help|--help|-h)
         help
