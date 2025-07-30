@@ -18,6 +18,15 @@ case "$1" in
     help|--help|-h)
         help
         exit 0
-        ;;
+        ;
+    
+    check-verilator)
+        if command -v verilator >/dev/null 2>&1; then
+            verilator --version
+        else
+            echo "Error: Verilator not found"
+            exit 1
+        fi
+        ;
     
 esac
