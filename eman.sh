@@ -28,9 +28,18 @@ case "$1" in
             exit 1
         fi
         ;;
-        
+
     verilator-example)
         run_make_in_dir "$2"
+        ;;
+    
+    change-verilator)
+        version="$2"
+        if [ -z "$version" ]; then
+            die "Version required for change-verilator"
+        fi
+        echo "Changing Verilator to version $version (installation logic not implemented)"
+        # TODO: Implement version switching logic
         ;;
     
     
