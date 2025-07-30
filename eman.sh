@@ -14,6 +14,12 @@ help() {
 EOF
 }
 
+die() {
+    echo "Error: $1" >&2
+    help
+    exit 1
+}
+
 case "$1" in
     help|--help|-h)
         help
@@ -65,5 +71,5 @@ case "$1" in
         help
         exit 1
         ;;
-        
+
 esac
