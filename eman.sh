@@ -13,3 +13,11 @@ help() {
 
 EOF
 }
+
+case "$1" in
+    help|--help|-h)
+        help
+        exit 0
+        ;;
+    
+esac
