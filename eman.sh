@@ -42,5 +42,20 @@ case "$1" in
         # TODO: Implement version switching logic
         ;;
     
+    c-compiler-version)
+        if command -v gcc >/dev/null 2>&1; then
+            echo "GCC Version:"
+            gcc --version | head -n 1
+        else
+            echo "Error: GCC not found"
+        fi
+        if command -v make >/dev/null 2>&1; then
+            echo -e "\nGNU Make Version:"
+            make --version | head -n 1
+        else
+            echo "Error: GNU Make not found"
+        fi
+        ;;
     
+
 esac
