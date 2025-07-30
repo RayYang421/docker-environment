@@ -57,5 +57,13 @@ case "$1" in
         fi
         ;;
     
-
+    c-compiler-example)
+        run_make_in_dir "$2"
+        ;;
+    *)
+        echo "Error: Unknown command: $1"
+        help
+        exit 1
+        ;;
+        
 esac
