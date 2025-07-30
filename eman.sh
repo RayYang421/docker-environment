@@ -18,7 +18,7 @@ case "$1" in
     help|--help|-h)
         help
         exit 0
-        ;
+        ;;
     
     check-verilator)
         if command -v verilator >/dev/null 2>&1; then
@@ -27,6 +27,11 @@ case "$1" in
             echo "Error: Verilator not found"
             exit 1
         fi
-        ;
+        ;;
+        
+    verilator-example)
+        run_make_in_dir "$2"
+        ;;
+    
     
 esac
